@@ -15,7 +15,8 @@ var wofAdminRecords = {};
 bundles.generateBundleList((err, bundlesToImport) => {
 
   if (err) {
-    throw new Error(err.message);
+    // error is a string (not an object)
+    throw new Error(err);
   }
 
   // This can be either csv or db files, the read stream module will do the job
